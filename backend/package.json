@@ -1,0 +1,29 @@
+{
+  "name": "drivermng-backend",
+  "version": "1.0.0",
+  "description": "Node.js Express backend API for Travel & Tourism Driver Directory",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drivermng-workspace": "file:..",
+    "express": "^4.19.2",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.15.0",
+    "xlsx": "^0.18.5"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "driver-directory",
+    "api"
+  ],
+  "author": "Travel & Tourism Team",
+  "license": "ISC"
+}

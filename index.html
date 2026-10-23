@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Directory — Travel & Tourism (React & Node.js)</title>
+  <meta name="description" content="Find verified drivers, vendors and vehicle owners for your travel and tourism transportation needs in mountain circuits. Built with React (JSX) and Node.js.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- React 18 & ReactDOM UMD CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
+  <!-- Babel Standalone for JSX Parsing in Browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- Root Mount Target for React App -->
+  <div id="root"></div>
+
+  <!-- React JSX Component Dependencies -->
+  <script type="text/babel" src="src/components/Header.jsx"></script>
+  <script type="text/babel" src="src/components/CategoryPopover.jsx"></script>
+  <script type="text/babel" src="src/components/SearchFilters.jsx"></script>
+  <script type="text/babel" src="src/components/DriverCard.jsx"></script>
+  <script type="text/babel" src="src/components/DriverModal.jsx"></script>
+  <script type="text/babel" src="src/components/EmptyState.jsx"></script>
+  <script type="text/babel" src="src/App.jsx"></script>
+
+  <!-- React Root Initialization -->
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+  </script>
+</body>
+</html>
