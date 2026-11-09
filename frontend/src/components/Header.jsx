@@ -7,11 +7,6 @@ export default function Header({ onLogout }) {
         <h1 className="app-title"><span>Driver</span> <em>Directory</em></h1>
 
         <div className="header-actions">
-          <a className="admin-link" href="/admin" title="Open admin panel">
-            <i className="fa-solid fa-sliders"></i>
-            <span>Admin</span>
-          </a>
-
           <button type="button" className="logout-button" onClick={onLogout} title="Sign out">
             <i className="fa-solid fa-arrow-right-from-bracket"></i>
             <span>Sign out</span>

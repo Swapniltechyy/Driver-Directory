@@ -123,6 +123,9 @@ body {
   box-shadow: var(--shadow-card);
   border: 1px solid var(--color-border);
   margin-bottom: 24px;
+  position: sticky;
+  top: 12px;
+  z-index: 50;
 }
 
 .filter-grid {
