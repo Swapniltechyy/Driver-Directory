@@ -146,5 +146,22 @@ export const DRIVERS_DATA = [
     areaId: 401,
     areaName: 'SNT Stand',
     categories: ['Vendor', 'Driver']
+  },
+  {
+    id: 15,
+    name: 'Kuldeep',
+    initials: 'K',
+    avatarBg: '#E0F2FE',
+    avatarColor: '#0369A1',
+    vehicleMake: 'Toyota',
+    vehicleModel: 'Innova',
+    phone: '7063056789',
+    whatsapp: '7063056789',
+    cityId: 1,
+    cityName: 'Darjeeling',
+    areaId: 101,
+    areaName: 'Mall Road Stand',
+    categories: ['Driver', 'Owner', 'Vendor'],
+    rating: 5
   }
 ];

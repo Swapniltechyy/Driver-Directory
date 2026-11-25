@@ -1,5 +1,9 @@
-function DriverModal({ driver, isOpen, onClose }) {
+function DriverModal({ driver, selectedCategories = [], isOpen, onClose }) {
   if (!isOpen || !driver) return null;
+
+  const displayedCategories = (selectedCategories && selectedCategories.length > 0)
+    ? driver.categories.filter(cat => selectedCategories.includes(cat))
+    : driver.categories;
 
   const getBadgeClass = (category) => {
     switch (category) {
@@ -57,7 +61,7 @@ function DriverModal({ driver, isOpen, onClose }) {
           <div className="detail-row">
             <span className="detail-label"><i className="fa-solid fa-users"></i> Categories</span>
             <div className="driver-categories">
-              {driver.categories.map(cat => (
+              {displayedCategories.map(cat => (
                 <span key={cat} className={`badge ${getBadgeClass(cat)}`}>
                   {cat}
                 </span>

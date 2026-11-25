@@ -30,7 +30,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 101,
     areaName: 'Mall Road Stand',
-    categories: ['Owner', 'Driver']
+    categories: ['Owner', 'Driver'],
+    rating: 5
   },
   {
     id: 2,
@@ -46,7 +47,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 101,
     areaName: 'Mall Road Stand',
-    categories: ['Owner', 'Driver']
+    categories: ['Owner', 'Driver'],
+    rating: 5
   },
   {
     id: 3,
@@ -62,7 +64,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 102,
     areaName: 'Chowrasta Stand',
-    categories: ['Owner', 'Vendor']
+    categories: ['Owner', 'Vendor'],
+    rating: 4
   },
   {
     id: 4,
@@ -78,7 +81,8 @@ const DRIVERS_DATA = [
     cityName: 'Kalimpong',
     areaId: 201,
     areaName: 'Taxi Stand',
-    categories: ['Driver']
+    categories: ['Driver'],
+    rating: 4
   },
   {
     id: 5,
@@ -94,7 +98,8 @@ const DRIVERS_DATA = [
     cityName: 'Kalimpong',
     areaId: 201,
     areaName: 'Taxi Stand',
-    categories: ['Owner', 'Driver']
+    categories: ['Owner', 'Driver'],
+    rating: 5
   },
   {
     id: 6,
@@ -110,7 +115,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 103,
     areaName: 'Lloyds Stand',
-    categories: ['Driver', 'Vendor']
+    categories: ['Driver', 'Vendor'],
+    rating: 4
   },
   {
     id: 7,
@@ -126,7 +132,8 @@ const DRIVERS_DATA = [
     cityName: 'Mirik',
     areaId: 301,
     areaName: 'Bus Stand',
-    categories: ['Owner', 'Driver']
+    categories: ['Owner', 'Driver'],
+    rating: 3
   },
   {
     id: 8,
@@ -142,7 +149,8 @@ const DRIVERS_DATA = [
     cityName: 'Siliguri',
     areaId: 401,
     areaName: 'SNT Stand',
-    categories: ['Vendor', 'Driver']
+    categories: ['Vendor', 'Driver'],
+    rating: 3
   },
   {
     id: 9,
@@ -158,7 +166,8 @@ const DRIVERS_DATA = [
     cityName: 'Siliguri',
     areaId: 402,
     areaName: 'Junction Stand',
-    categories: ['Owner']
+    categories: ['Owner'],
+    rating: 4
   },
   {
     id: 10,
@@ -174,7 +183,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 102,
     areaName: 'Chowrasta Stand',
-    categories: ['Vendor']
+    categories: ['Vendor'],
+    rating: 2
   },
   {
     id: 11,
@@ -190,7 +200,8 @@ const DRIVERS_DATA = [
     cityName: 'Kalimpong',
     areaId: 201,
     areaName: 'Taxi Stand',
-    categories: ['Owner', 'Vendor']
+    categories: ['Owner', 'Vendor'],
+    rating: 3
   },
   {
     id: 12,
@@ -206,7 +217,8 @@ const DRIVERS_DATA = [
     cityName: 'Mirik',
     areaId: 301,
     areaName: 'Bus Stand',
-    categories: ['Owner', 'Driver', 'Vendor']
+    categories: ['Owner', 'Driver', 'Vendor'],
+    rating: 5
   },
   {
     id: 13,
@@ -222,7 +234,8 @@ const DRIVERS_DATA = [
     cityName: 'Darjeeling',
     areaId: 103,
     areaName: 'Lloyds Stand',
-    categories: ['Driver']
+    categories: ['Driver'],
+    rating: 2
   },
   {
     id: 14,
@@ -238,7 +251,25 @@ const DRIVERS_DATA = [
     cityName: 'Siliguri',
     areaId: 401,
     areaName: 'SNT Stand',
-    categories: ['Driver', 'Vendor']
+    categories: ['Driver', 'Vendor'],
+    rating: 1
+  },
+  {
+    id: 15,
+    name: 'Kuldeep',
+    initials: 'K',
+    avatarBg: '#E0F2FE',
+    avatarColor: '#0369A1',
+    vehicleMake: 'Toyota',
+    vehicleModel: 'Innova',
+    phone: '7063056789',
+    whatsapp: '7063056789',
+    cityId: 1,
+    cityName: 'Darjeeling',
+    areaId: 101,
+    areaName: 'Mall Road Stand',
+    categories: ['Driver', 'Owner', 'Vendor'],
+    rating: 5
   }
 ];
 

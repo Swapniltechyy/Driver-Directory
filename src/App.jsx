@@ -87,14 +87,21 @@ function App() {
       .catch(() => {
         // Fallback local filtering logic
         const SEED_DRIVERS = [
-          { id: 1, name: 'Ramesh Thapa', initials: 'RT', avatarBg: '#E0F2FE', avatarColor: '#0369A1', vehicleMake: 'Toyota', vehicleModel: 'Innova', phone: '+91 98765 43210', whatsapp: '919876543210', cityId: 1, cityName: 'Darjeeling', areaId: 101, areaName: 'Mall Road Stand', categories: ['Owner', 'Driver'] },
-          { id: 2, name: 'Suresh Rai', initials: 'SR', avatarBg: '#DCFCE7', avatarColor: '#15803D', vehicleMake: 'Mahindra', vehicleModel: 'Bolero', phone: '+91 87654 32109', whatsapp: '918765432109', cityId: 1, cityName: 'Darjeeling', areaId: 101, areaName: 'Mall Road Stand', categories: ['Owner', 'Driver'] },
-          { id: 3, name: 'Pawan Gurung', initials: 'PG', avatarBg: '#F3E8FF', avatarColor: '#7E22CE', vehicleMake: 'Mahindra', vehicleModel: 'Xylo', phone: '+91 94321 65432', whatsapp: '919432165432', cityId: 1, cityName: 'Darjeeling', areaId: 102, areaName: 'Chowrasta Stand', categories: ['Owner', 'Vendor'] },
-          { id: 4, name: 'Karan Lama', initials: 'KL', avatarBg: '#FEF3C7', avatarColor: '#B45309', vehicleMake: 'Toyota', vehicleModel: 'Innova', phone: '+91 96543 21098', whatsapp: '919654321098', cityId: 2, cityName: 'Kalimpong', areaId: 201, areaName: 'Taxi Stand', categories: ['Driver'] },
-          { id: 5, name: 'Anil Sharma', initials: 'AS', avatarBg: '#CCFBF1', avatarColor: '#0F766E', vehicleMake: 'Maruti Suzuki', vehicleModel: 'Swift', phone: '+91 91234 56789', whatsapp: '919123456789', cityId: 2, cityName: 'Kalimpong', areaId: 201, areaName: 'Taxi Stand', categories: ['Owner', 'Driver'] },
-          { id: 6, name: 'Deepak Singh', initials: 'DS', avatarBg: '#FEE2E2', avatarColor: '#B91C1C', vehicleMake: 'Maruti Suzuki', vehicleModel: 'Ertiga', phone: '+91 98887 76655', whatsapp: '919888776655', cityId: 1, cityName: 'Darjeeling', areaId: 103, areaName: 'Lloyds Stand', categories: ['Driver', 'Vendor'] },
-          { id: 7, name: 'Bikash Tamang', initials: 'BT', avatarBg: '#EDE9FE', avatarColor: '#6D28D9', vehicleMake: 'Toyota', vehicleModel: 'Fortuner', phone: '+91 90011 22334', whatsapp: '919001122334', cityId: 3, cityName: 'Mirik', areaId: 301, areaName: 'Bus Stand', categories: ['Owner', 'Driver'] },
-          { id: 8, name: 'Sanjay Das', initials: 'SD', avatarBg: '#E0F2FE', avatarColor: '#0284C7', vehicleMake: 'Mahindra', vehicleModel: 'Scorpio', phone: '+91 88776 55443', whatsapp: '918877655443', cityId: 4, cityName: 'Siliguri', areaId: 401, areaName: 'SNT Stand', categories: ['Vendor', 'Driver'] }
+          { id: 1, name: 'Ramesh Thapa', initials: 'RT', avatarBg: '#E0F2FE', avatarColor: '#0369A1', vehicleMake: 'Toyota', vehicleModel: 'Innova', phone: '+91 98765 43210', whatsapp: '919876543210', cityId: 1, cityName: 'Darjeeling', areaId: 101, areaName: 'Mall Road Stand', categories: ['Owner', 'Driver'], rating: 5 },
+          { id: 2, name: 'Suresh Rai', initials: 'SR', avatarBg: '#DCFCE7', avatarColor: '#15803D', vehicleMake: 'Mahindra', vehicleModel: 'Bolero', phone: '+91 87654 32109', whatsapp: '918765432109', cityId: 1, cityName: 'Darjeeling', areaId: 101, areaName: 'Mall Road Stand', categories: ['Owner', 'Driver'], rating: 5 },
+          { id: 3, name: 'Pawan Gurung', initials: 'PG', avatarBg: '#F3E8FF', avatarColor: '#7E22CE', vehicleMake: 'Mahindra', vehicleModel: 'Xylo', phone: '+91 94321 65432', whatsapp: '919432165432', cityId: 1, cityName: 'Darjeeling', areaId: 102, areaName: 'Chowrasta Stand', categories: ['Owner', 'Vendor'], rating: 4 },
+          { id: 4, name: 'Karan Lama', initials: 'KL', avatarBg: '#FEF3C7', avatarColor: '#B45309', vehicleMake: 'Toyota', vehicleModel: 'Innova', phone: '+91 96543 21098', whatsapp: '919654321098', cityId: 2, cityName: 'Kalimpong', areaId: 201, areaName: 'Taxi Stand', categories: ['Driver'], rating: 4 },
+          { id: 5, name: 'Anil Sharma', initials: 'AS', avatarBg: '#CCFBF1', avatarColor: '#0F766E', vehicleMake: 'Maruti Suzuki', vehicleModel: 'Swift', phone: '+91 91234 56789', whatsapp: '919123456789', cityId: 2, cityName: 'Kalimpong', areaId: 201, areaName: 'Taxi Stand', categories: ['Owner', 'Driver'], rating: 5 },
+          { id: 6, name: 'Deepak Singh', initials: 'DS', avatarBg: '#FEE2E2', avatarColor: '#B91C1C', vehicleMake: 'Maruti Suzuki', vehicleModel: 'Ertiga', phone: '+91 98887 76655', whatsapp: '919888776655', cityId: 1, cityName: 'Darjeeling', areaId: 103, areaName: 'Lloyds Stand', categories: ['Driver', 'Vendor'], rating: 4 },
+          { id: 7, name: 'Bikash Tamang', initials: 'BT', avatarBg: '#EDE9FE', avatarColor: '#6D28D9', vehicleMake: 'Toyota', vehicleModel: 'Fortuner', phone: '+91 90011 22334', whatsapp: '919001122334', cityId: 3, cityName: 'Mirik', areaId: 301, areaName: 'Bus Stand', categories: ['Owner', 'Driver'], rating: 3 },
+          { id: 8, name: 'Sanjay Das', initials: 'SD', avatarBg: '#E0F2FE', avatarColor: '#0284C7', vehicleMake: 'Mahindra', vehicleModel: 'Scorpio', phone: '+91 88776 55443', whatsapp: '918877655443', cityId: 4, cityName: 'Siliguri', areaId: 401, areaName: 'SNT Stand', categories: ['Vendor', 'Driver'], rating: 3 },
+          { id: 9, name: 'Maya Rai', initials: 'MR', avatarBg: '#FCE7F3', avatarColor: '#BE185D', vehicleMake: 'Maruti Suzuki', vehicleModel: 'WagonR', phone: '+91 90123 45678', whatsapp: '919012345678', cityId: 4, cityName: 'Siliguri', areaId: 402, areaName: 'Junction Stand', categories: ['Owner'], rating: 4 },
+          { id: 10, name: 'Rita Chettri', initials: 'RC', avatarBg: '#FEF3C7', avatarColor: '#B45309', vehicleMake: 'Toyota', vehicleModel: 'Glanza', phone: '+91 90909 12121', whatsapp: '919090912121', cityId: 1, cityName: 'Darjeeling', areaId: 102, areaName: 'Chowrasta Stand', categories: ['Vendor'], rating: 2 },
+          { id: 11, name: 'Joseph Lepcha', initials: 'JL', avatarBg: '#DBEAFE', avatarColor: '#1D4ED8', vehicleMake: 'Mahindra', vehicleModel: 'Scorpio', phone: '+91 93333 44556', whatsapp: '919333344556', cityId: 2, cityName: 'Kalimpong', areaId: 201, areaName: 'Taxi Stand', categories: ['Owner', 'Vendor'], rating: 3 },
+          { id: 12, name: 'Nima Bhutia', initials: 'NB', avatarBg: '#DCFCE7', avatarColor: '#15803D', vehicleMake: 'Force', vehicleModel: 'Traveller', phone: '+91 94444 66778', whatsapp: '919444466778', cityId: 3, cityName: 'Mirik', areaId: 301, areaName: 'Bus Stand', categories: ['Owner', 'Driver', 'Vendor'], rating: 5 },
+          { id: 13, name: 'Tashi Dorjee', initials: 'TD', avatarBg: '#E0F2FE', avatarColor: '#0369A1', vehicleMake: 'Toyota', vehicleModel: 'Rumion', phone: '+91 95555 88990', whatsapp: '919555588990', cityId: 1, cityName: 'Darjeeling', areaId: 103, areaName: 'Lloyds Stand', categories: ['Driver'], rating: 2 },
+          { id: 14, name: 'Sunita Tamang', initials: 'ST', avatarBg: '#F3E8FF', avatarColor: '#7E22CE', vehicleMake: 'Maruti Suzuki', vehicleModel: 'Ertiga', phone: '+91 96666 11223', whatsapp: '919666611223', cityId: 4, cityName: 'Siliguri', areaId: 401, areaName: 'SNT Stand', categories: ['Driver', 'Vendor'], rating: 1 },
+          { id: 15, name: 'Kuldeep', initials: 'K', avatarBg: '#E0F2FE', avatarColor: '#0369A1', vehicleMake: 'Toyota', vehicleModel: 'Innova', phone: '7063056789', whatsapp: '7063056789', cityId: 1, cityName: 'Darjeeling', areaId: 101, areaName: 'Mall Road Stand', categories: ['Driver', 'Owner', 'Vendor'], rating: 5 }
         ];
 
         let result = [...SEED_DRIVERS];
@@ -131,7 +138,14 @@ function App() {
         }
         if (sortOption === 'name-asc') result.sort((a,b) => a.name.localeCompare(b.name));
         if (sortOption === 'name-desc') result.sort((a,b) => b.name.localeCompare(a.name));
-        if (sortOption === 'city') result.sort((a,b) => a.cityName.localeCompare(b.cityName));
+        if (sortOption === 'rating' || sortOption === 'rating-desc') {
+          result.sort((a, b) => {
+            const rA = Number(a.rating != null ? a.rating : 5);
+            const rB = Number(b.rating != null ? b.rating : 5);
+            if (rB !== rA) return rB - rA;
+            return a.name.localeCompare(b.name);
+          });
+        }
 
         setDrivers(result);
         setTotalCount(SEED_DRIVERS.length);
@@ -211,7 +225,7 @@ function App() {
           >
             <option value="name-asc">Sort by: Name (A-Z)</option>
             <option value="name-desc">Sort by: Name (Z-A)</option>
-            <option value="city">Sort by: City</option>
+            <option value="rating">Sort by: Ratings</option>
           </select>
         </div>
       </section>
@@ -228,6 +242,7 @@ function App() {
             <window.DriverCard
               key={driver.id}
               driver={driver}
+              selectedCategories={selectedCategories}
               onSelectDriver={handleSelectDriver}
             />
           ))}
@@ -244,6 +259,7 @@ function App() {
       {/* Driver Profile Detail Modal */}
       <window.DriverModal
         driver={selectedDriver}
+        selectedCategories={selectedCategories}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

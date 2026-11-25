@@ -1,4 +1,8 @@
-function DriverCard({ driver, onSelectDriver }) {
+function DriverCard({ driver, selectedCategories = [], onSelectDriver }) {
+  const displayedCategories = (selectedCategories && selectedCategories.length > 0)
+    ? driver.categories.filter(cat => selectedCategories.includes(cat))
+    : driver.categories;
+
   const getBadgeClass = (category) => {
     switch (category) {
       case 'Owner': return 'badge-owner';
@@ -28,11 +32,11 @@ function DriverCard({ driver, onSelectDriver }) {
             <span className="driver-vehicle-model"> | {driver.vehicleModel}</span>
           )}
         </h3>
-        <div className="driver-rating-stars" aria-label={`${driver.rating || 5} out of 5 stars`}>
+        <div className="driver-rating-stars" aria-label={`${driver.rating != null ? driver.rating : 5} out of 5 stars`}>
           {[1, 2, 3, 4, 5].map((star) => (
             <i
               key={star}
-              className={`fa-solid fa-star ${star <= (driver.rating || 5) ? 'star-filled' : 'star-empty'}`}
+              className={`fa-solid fa-star ${star <= (driver.rating != null ? Number(driver.rating) : 5) ? 'star-filled' : 'star-empty'}`}
             ></i>
           ))}
         </div>
@@ -72,7 +76,7 @@ function DriverCard({ driver, onSelectDriver }) {
       {/* 5. Categories Badges */}
       <div className="card-col-categories">
         <div className="driver-categories">
-          {driver.categories.map(cat => (
+          {displayedCategories.map(cat => (
             <span key={cat} className={`badge ${getBadgeClass(cat)}`}>
               {cat}
             </span>

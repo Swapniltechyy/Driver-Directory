@@ -100,8 +100,13 @@ exports.getDrivers = (req, res) => {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sort === 'name-desc') {
       filtered.sort((a, b) => b.name.localeCompare(a.name));
-    } else if (sort === 'city') {
-      filtered.sort((a, b) => a.cityName.localeCompare(b.cityName));
+    } else if (sort === 'rating' || sort === 'rating-desc') {
+      filtered.sort((a, b) => {
+        const rA = Number(a.rating != null ? a.rating : 5);
+        const rB = Number(b.rating != null ? b.rating : 5);
+        if (rB !== rA) return rB - rA;
+        return a.name.localeCompare(b.name);
+      });
     }
 
     res.json({

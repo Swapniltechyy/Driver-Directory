@@ -90,7 +90,7 @@ export default function SearchFilters({
         </div>
 
         {/* City Dropdown */}
-        <div className="filter-group city-filter-group" ref={cityDropdownRef} style={{ position: 'relative' }}>
+        <div className={`filter-group city-filter-group ${isCityDropdownOpen ? 'dropdown-open' : ''}`} ref={cityDropdownRef} style={{ position: 'relative' }}>
           <label className="filter-label">City</label>
           <div className="input-icon-wrapper">
             <i className="fa-solid fa-location-dot field-icon"></i>
@@ -152,7 +152,7 @@ export default function SearchFilters({
         </div>
 
         {/* Area / Stand Dropdown */}
-        <div className="filter-group area-filter-group" ref={areaDropdownRef} style={{ position: 'relative' }}>
+        <div className={`filter-group area-filter-group ${isAreaDropdownOpen ? 'dropdown-open' : ''}`} ref={areaDropdownRef} style={{ position: 'relative' }}>
           <label className="filter-label">Area / Stand</label>
           <div className="input-icon-wrapper">
             <i className="fa-solid fa-bus-simple field-icon"></i>
@@ -214,7 +214,7 @@ export default function SearchFilters({
         </div>
 
         {/* Car Category Dropdown */}
-        <div className="filter-group car-category-group" ref={carDropdownRef} style={{ position: 'relative' }}>
+        <div className={`filter-group car-category-group ${isCarDropdownOpen ? 'dropdown-open' : ''}`} ref={carDropdownRef} style={{ position: 'relative' }}>
           <label className="filter-label">Car Category</label>
           <div className="input-icon-wrapper">
             <i className="fa-solid fa-car field-icon"></i>

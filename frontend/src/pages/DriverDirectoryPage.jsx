@@ -4,7 +4,7 @@ import SearchFilters from '../components/SearchFilters';
 import DriverCard from '../components/DriverCard';
 import DriverModal from '../components/DriverModal';
 import EmptyState from '../components/EmptyState';
-import { fetchCities, fetchAreas, fetchDrivers } from '../services/api';
+import { fetchCities, fetchAreas, fetchDrivers, updateDriverRating } from '../services/api';
 
 export default function DriverDirectoryPage({ onLogout }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,6 +23,19 @@ export default function DriverDirectoryPage({ onLogout }) {
 
   const [selectedDriver, setSelectedDriver] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 80);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // 1. Fetch Cities on Mount
   useEffect(() => {
@@ -85,6 +98,15 @@ export default function DriverDirectoryPage({ onLogout }) {
     setIsModalOpen(true);
   };
 
+  // Update Driver Rating from Modal
+  const handleUpdateRating = async (driverId, newRating) => {
+    setDrivers(prevDrivers =>
+      prevDrivers.map(d => d.id === driverId ? { ...d, rating: newRating } : d)
+    );
+    setSelectedDriver(prev => prev && prev.id === driverId ? { ...prev, rating: newRating } : prev);
+    await updateDriverRating(driverId, newRating);
+  };
+
   return (
     <div className="app-container">
       {/* Header Banner */}
@@ -131,7 +153,7 @@ export default function DriverDirectoryPage({ onLogout }) {
           >
             <option value="name-asc">Sort by: Name (A-Z)</option>
             <option value="name-desc">Sort by: Name (Z-A)</option>
-            <option value="city">Sort by: City</option>
+            <option value="rating">Sort by: Ratings</option>
           </select>
         </div>
       </section>
@@ -148,6 +170,7 @@ export default function DriverDirectoryPage({ onLogout }) {
             <DriverCard
               key={driver.id}
               driver={driver}
+              selectedCategories={selectedCategories}
               onSelectDriver={handleSelectDriver}
             />
           ))}
@@ -164,9 +187,22 @@ export default function DriverDirectoryPage({ onLogout }) {
       {/* Driver Profile Detail Modal */}
       <DriverModal
         driver={selectedDriver}
+        selectedCategories={selectedCategories}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onUpdateRating={handleUpdateRating}
       />
+
+      {/* Floating Scroll to Top Button (Mobile) */}
+      <button
+        type="button"
+        className={`scroll-to-top-btn ${showScrollTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top of page"
+        title="Back to top"
+      >
+        <i className="fa-solid fa-arrow-up"></i>
+      </button>
     </div>
   );
 }
